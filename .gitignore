@@ -1,0 +1,5 @@
+/Demo
+/ScheduleGenWinForms/.vs
+/ScheduleGenWinForms/ScheduleGenWinForms/obj
+/ScheduleGenWinForms/ScheduleGenWinForms/bin/debug/net5.0-windows/*
+!/ScheduleGenWinForms/ScheduleGenWinForms/bin/debug/net5.0-windows/webapi
