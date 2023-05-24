@@ -1,38 +1,46 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link href="style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div id="container">
-        <a href="#"> <img class="h-icon" src="./assets/doubts-button.png"> </a>
-        <div class="mainframe">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link href="style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <script>
+        function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+          //TODO hide it
+        }
+    </script>
+    <body>
+        <div class="container">
+            <div class="popup" >
+                <span class="popuptext" id="myPopup">TODO popup tekst</span>
+            </div>
+            <a href="#"> <img onclick="myFunction()" class="h-icon" src="./assets/doubts-button.png"> </a>
+            <div class="mainframe">
 
-            <a href="#">
-                <button class="btn">IMPORT</button>
-            </a>
-
-            <h1 class="main-text">Select your type of optimization</h1>
-
-            <select class="minimal" style="font-size: 25px; font-family: 'Arsenal', sans-serif; ">
-                <option>Optimization 1</option>
-                <option>Optimization 2</option>
-            </select>
-
-            <a href="generate.html">
-                <button class="btn">GENERATE</button>
-            </a>
+                <label class="btn">
+                    <input type="file" accept=".csv"/>
+                    IMPORT
+                </label>
+            
+                <h1 class="main-text">Select your type of optimization</h1>
+                
+               <!--<select class="minimal" style="font-size: 25px; font-family: 'Arsenal', sans-serif; ">
+                    <option>Optimization 1</option>
+                    <option>Optimization 2</option>
+                </select>
+                -->
+                <a href="result.html">
+                    <button class="btn">GENERATE</button>
+                </a>
+            </div>
         </div>
-
-    </div>
-
-
-</body>
+    </body>
 </html>

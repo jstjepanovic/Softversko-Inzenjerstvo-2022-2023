@@ -1,17 +1,17 @@
-﻿* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+body{
     min-height: 100vh;
     background: #FCFCFC;
     font-family: 'Arsenal', sans-serif;
     overflow: hidden
 }
 
-.indexframe, .mainframe {
+.indexframe, .mainframe{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,15 +19,19 @@ body {
     height: 100%;
 }
 
-.indexframe {
+.indexframe{
     gap: 150px;
 }
 
-.mainframe {
+.mainframe{
     gap: 100px;
 }
 
-.btn {
+input[type='file']{
+    display: none;
+}
+
+.btn{
     background-color: #404080;
     border: none;
     color: white;
@@ -36,70 +40,44 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 56px;
+    font-weight: 400;
     border-radius: 10px;
     transition-duration: 0.4s;
     border: 1px solid transparent;
 }
 
-    .btn:hover {
-        background-color: #FCFCFC;
-        color: black;
-        border: 1px solid black;
-    }
+.btn:hover {
+    background-color: #FCFCFC;
+    color: black;
+    border: 1px solid black;
+}
 
-.h-icon {
+.h-icon{
     width: 75px;
     height: 75px;
-    position: absolute;
-    top: 50px;
+    position:absolute;
+    top:50px;
     right: 50px;
 }
 
-.main-text {
+.main-text{
     font-size: 90px;
     font-weight: 400;
 }
 
-#maintitle {
+#maintitle{
     font-size: 140px;
     font-weight: 400;
 }
 
-
-#container {
+.container{
     height: 100vh;
 }
-
-#subtitle {
-    font-size: 70px;
-    font-weight: 400;
-}
-
-progress {
-    background-color: #385682;
-    height: 8%;
-    width: 80%;
-    border-radius: 50px;
-}
-
-    progress::-webkit-progress-bar {
-        background-color: #385682;
-        border-radius: 50px;
-    }
-
-    progress::-webkit-progress-value {
-        background-color: #5b9cff;
-        border-radius: 50px;
-    }
-
-    progress::-moz-progress-bar {
-        background-color: #385682;
-        border-radius: 50px;
-    }
 
 select {
     font-weight: 400;
     font-size: 12px;
+
     /* styling */
     background-color: white;
     border: thin solid blue;
@@ -108,9 +86,10 @@ select {
     font: inherit;
     line-height: 1.5em;
     padding: 0.5em 8em 0.5em 4em;
+  
     /* reset */
-
-    margin: 0;
+  
+    margin: 0;      
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -118,29 +97,47 @@ select {
     -moz-appearance: none;
 }
 
-    select.minimal {
-        background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
-        background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
-        background-size: 5px 5px, 5px 5px, 1px 1.5em;
-        background-repeat: no-repeat;
+select.minimal {
+    background-image:
+        linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
     }
 
-        select.minimal:focus {
-            background-image: linear-gradient(45deg, green 50%, transparent 50%), linear-gradient(135deg, transparent 50%, green 50%), linear-gradient(to right, #ccc, #ccc);
-            background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
-            background-size: 5px 5px, 5px 5px, 1px 1.5em;
-            background-repeat: no-repeat;
-            outline: 0;
-        }
+select.minimal:focus {
+    background-image:
+        linear-gradient(45deg, green 50%, transparent 50%),
+        linear-gradient(135deg, transparent 50%, green 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 15px) 1em,
+        calc(100% - 20px) 1em,
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+    outline: 0;
+}
 
 
-    select:-moz-focusring {
-        color: transparent;
-        text-shadow: 0 0 0 #000;
-    }
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
 
 
-.result-container {
+.result-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -148,18 +145,70 @@ select {
     gap: 100px;
 }
 
-#preview {
+#preview{
     background-color: gray;
     height: 70vh;
     width: 100%;
 }
 
-#result-page-icons {
+#result-page-icons{
     display: flex;
     gap: 450px;
 }
 
-.icon {
+.icon{
     width: 100px;
     height: 100px;
+}
+
+
+.loader {
+    border: 26px solid #f3f3f3;  
+    border-top: 26px solid #3498db; 
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#subtitle{
+    font-size: 70px;
+    font-weight: 400;
+}
+
+
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    top: 70px;
+    right: 140px;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
 }

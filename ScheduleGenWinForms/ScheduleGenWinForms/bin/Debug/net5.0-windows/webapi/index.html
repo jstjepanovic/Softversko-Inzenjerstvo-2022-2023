@@ -1,25 +1,35 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div id="container">
-        <a href="#"> <img class="h-icon" src="./assets/doubts-button.png"> </a>
-        <div class="indexframe">
-
-            <h1 id="maintitle">Schedule generator</h1>
-
-            <a href="main.html">
-                <button class="btn">BEGIN</button>
-            </a>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <script>
+        function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+          //TODO hide it
+        }
+    </script>
+    <body>
+        <div id="container">
+            <div class="popup" >
+                <span class="popuptext" id="myPopup">TODO Popup tekst</span>
+            </div>
+            <a href="#"><img onclick="myFunction()" class="h-icon" src="./assets/doubts-button.png"></div></a>
+            <div class="indexframe">
+            
+                <h1 id="maintitle">Schedule generator</h1>
+    
+                <a href="main.html">
+                    <button class="btn">BEGIN</button>
+                </a>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
