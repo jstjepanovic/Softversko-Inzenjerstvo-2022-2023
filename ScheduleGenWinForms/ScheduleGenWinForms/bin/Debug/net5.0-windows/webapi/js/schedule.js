@@ -15,7 +15,7 @@ const have_intersection = (lhs, rhs) =>
 
 const schedule = (courses, timeslots) =>
 {
-        let names      = new Array(courses.length);
+        let names      = [];
         let adj_matrix = new Array(courses.length).fill(new Array(courses.length).fill(false));
 
         for (let i = 0; i < courses.length; i++)
@@ -83,7 +83,7 @@ const schedule = (courses, timeslots) =>
                 if (correct)
                 {
                         const result = [];
-                        for (const timeslot in timeslots)
+                        for (const timeslot of timeslots)
                         {
                                 result.push([timeslot]);
                         }

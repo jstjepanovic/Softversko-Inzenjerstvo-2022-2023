@@ -13,19 +13,66 @@
         <script src="js/schedule.js"></script>
     </head>
     <script>
-        data = JSON.parse(localStorage["data"]);
-        console.log(data);
 
-        
-        window.onload = function(){
-            let tID = setTimeout(function () {
+        function redirect(){
+            setTimeout(function () {
                     window.location.href = "result.html";
                     window.clearTimeout(tID);        
-            }, 5000);
+            }, 605000);
         }
+
+        function load_timeslot(choice){
+            
+            let workdays  = ["Mon", "Tue", "Wedn", "Thurs", "Fri"]
+            let timeslots = []
+            
+            switch (choice) {
+                case 1:
+                    var times = ["08:00 - 10:00", "10:00 - 12:00", "12:00 - 14:00", "14:00 - 16:00", "16:00 - 18:00", "18:00 - 20:00"]
+                    break;
+
+                case 2:
+                    var times = ["08:00 - 09:00", "09:00 - 10:00", "10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00"]
+                    break;
+            
+                case 3:
+                    var times = ["14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "17:00 - 18:00", "18:00 - 19:00"]
+                    break;
+            
+                default:
+                    return -1
+                    break;
+            }
+
+                    
+            
+            for (const workday of workdays)
+                {
+                    for (const time of times)
+                    {
+                        timeslots.push(`${workday} ${time}`);
+                    }
+                }
+
+            return timeslots
+        }
+
+
+        let data = JSON.parse(localStorage["data"]);
+        
+                
+        for (let i = 0; i < data.length; i++) {
+            data[i] = data[i].replace("\r", "").split(", ")
+        }
+       
+
+        timeslot_data = load_timeslot(1)
+
+        schedule_data = schedule(data, timeslot_data)
+     
         
     </script>
-    <body>
+    <body onload="redirect()">
         <div id="container">
             <div class="indexframe">
             
