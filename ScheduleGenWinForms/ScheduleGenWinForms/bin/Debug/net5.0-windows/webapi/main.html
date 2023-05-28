@@ -9,6 +9,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+        <script src="js/jquery-3.6.1.min.js"></script>
+
     </head>
     <script>
         function myFunction() {
@@ -16,29 +19,40 @@
           popup.classList.toggle("show");
           //TODO hide it
         }
+
+        function readCSVFile() {
+            var files = document.querySelector('#file').files;
+            var file = files[0];
+
+            var reader = new FileReader();
+            reader.readAsText(file);
+
+            reader.onload = function(event) {
+                var csvdata = event.target.result;
+                var rowData = csvdata.split('\n');
+
+                localStorage["data"] = JSON.stringify(rowData);
+                console.log(rowData);
+            }
+        }
     </script>
     <body>
         <div class="container">
             <div class="popup" >
-                <span class="popuptext" id="myPopup">TODO popup tekst</span>
+                <span class="popuptext" id="myPopup">Generator requires csv file with courses and available timeslots as input</span>
             </div>
             <a href="#"> <img onclick="myFunction()" class="h-icon" src="./assets/doubts-button.png"> </a>
             <div class="mainframe">
 
                 <label class="btn">
-                    <input type="file" accept=".csv"/>
+                    <input type="file" name="file" id="file" accept=".csv"/>
                     IMPORT
                 </label>
             
-                <h1 class="main-text">Select your type of optimization</h1>
+                <h1 class="main-text">Click here to generate</h1>
                 
-               <!--<select class="minimal" style="font-size: 25px; font-family: 'Arsenal', sans-serif; ">
-                    <option>Optimization 1</option>
-                    <option>Optimization 2</option>
-                </select>
-                -->
-                <a href="result.html">
-                    <button class="btn">GENERATE</button>
+                <a href="generate.html">
+                    <button class="btn" value="Generate" onclick="readCSVFile();" >GENERATE</button>
                 </a>
             </div>
         </div>

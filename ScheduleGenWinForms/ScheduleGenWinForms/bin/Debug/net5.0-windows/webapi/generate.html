@@ -8,10 +8,25 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+        <script src="js/jquery-3.6.1.min.js"></script>
+        <script src="js/schedule.js"></script>
     </head>
+    <script>
+        data = JSON.parse(localStorage["data"]);
+        console.log(data);
+
+        
+        window.onload = function(){
+            let tID = setTimeout(function () {
+                    window.location.href = "result.html";
+                    window.clearTimeout(tID);        
+            }, 5000);
+        }
+        
+    </script>
     <body>
         <div id="container">
-            <!--<a href="#"> <img class="h-icon" src="./assets/doubts-button.png"> </a>-->
             <div class="indexframe">
             
                 <h1 id="maintitle">Generating preview</h1>
@@ -22,3 +37,4 @@
         </div>
     </body>
 </html>
+
