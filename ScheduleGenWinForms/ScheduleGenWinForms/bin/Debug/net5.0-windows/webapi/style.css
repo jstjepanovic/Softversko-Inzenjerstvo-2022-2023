@@ -149,6 +149,8 @@ select:-moz-focusring {
     background-color: gray;
     height: 70vh;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #result-page-icons{
@@ -211,4 +213,17 @@ select:-moz-focusring {
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity:1 ;}
+}
+
+.preview-table{
+    background-color: #FCFCFC;
+    border: 5px solid;
+    align-self: center;
+}
+
+td{
+    border: 1px solid;
+    text-align: center;
+    height: 50px;
+    width: 100px;
 }

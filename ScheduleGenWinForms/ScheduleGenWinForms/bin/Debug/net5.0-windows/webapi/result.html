@@ -8,20 +8,23 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-        <script src="./js/display_res.js"></script>
+
+        <script src="js/jquery-3.6.1.min.js"></script>
+        <script src="js/tableHTMLExport.js"></script>
     </head>
-    
     <body>
         <div class="container">
             <div class="result-container">
-                <div id="preview">
+                <div class="preview" id="preview">
 
                 </div>
                 <div id="result-page-icons">
-                    <a href="main.html"> <img class="icon" src="./assets/home.png"> </a>
-                    <a href="#"> <img class="icon" src="./assets/download.png"> </a>
+                    <a href="main.html" onclick="localStorage.clear();"> <img class="icon" src="./assets/home.png"> </a>
+                    <a href="#" id="download"> <img class="icon" src="./assets/download.png"> </a>
                 </div>
             </div>
         </div>
+
+        <script type="module" src="js/preview.js"></script>
     </body>
 </html>

@@ -18,7 +18,7 @@
             setTimeout(function () {
                     window.location.href = "result.html";
                     window.clearTimeout(tID);        
-            }, 605000);
+            }, 1000);
         }
 
         function load_timeslot(choice){
@@ -66,10 +66,11 @@
         }
        
 
-        timeslot_data = load_timeslot(1)
+        let timeslot_data = load_timeslot(1)
 
-        schedule_data = schedule(data, timeslot_data)
-     
+        let schedule_data = schedule(data, timeslot_data)
+
+        localStorage["result"] = JSON.stringify(schedule_data);
         
     </script>
     <body onload="redirect()">
