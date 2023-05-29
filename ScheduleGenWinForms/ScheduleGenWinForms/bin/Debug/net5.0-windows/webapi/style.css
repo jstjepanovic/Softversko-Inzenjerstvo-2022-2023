@@ -21,6 +21,7 @@ body{
 
 .indexframe{
     gap: 150px;
+    margin-top: 8%;
 }
 
 .mainframe{
@@ -226,4 +227,14 @@ td{
     text-align: center;
     height: 50px;
     width: 100px;
+}
+
+button:disabled, button[disabled]{
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+h1{
+    align-self: center;
+    font-size: 60px;
 }

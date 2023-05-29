@@ -18,7 +18,7 @@
             setTimeout(function () {
                     window.location.href = "result.html";
                     window.clearTimeout(tID);        
-            }, 1000);
+            }, 2000);
         }
 
         function load_timeslot(choice){
@@ -54,7 +54,9 @@
                     }
                 }
 
-            return timeslots
+            
+
+            return [timeslots, times]
         }
 
 
@@ -68,9 +70,11 @@
 
         let timeslot_data = load_timeslot(1)
 
-        let schedule_data = schedule(data, timeslot_data)
+        let schedule_data = schedule(data, timeslot_data[0])
+      
 
         localStorage["result"] = JSON.stringify(schedule_data);
+        localStorage["times"] = JSON.stringify(timeslot_data[1]);
         
     </script>
     <body onload="redirect()">

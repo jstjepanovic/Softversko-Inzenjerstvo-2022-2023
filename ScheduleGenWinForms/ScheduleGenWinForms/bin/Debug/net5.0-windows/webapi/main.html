@@ -31,8 +31,13 @@
                 var rowData = csvdata.split('\n');
 
                 localStorage["data"] = JSON.stringify(rowData);
-                console.log(rowData);
             }
+
+            window.location.href = "generate.html";
+        }
+
+        function check(){
+            document.getElementById("btngen").removeAttribute('disabled');
         }
     </script>
     <body>
@@ -44,15 +49,14 @@
             <div class="mainframe">
 
                 <label class="btn">
-                    <input type="file" name="file" id="file" accept=".csv"/>
+                    <input oninput="check()" type="file" name="file" id="file" accept=".csv"/>
                     IMPORT
                 </label>
             
                 <h1 class="main-text">Click here to generate</h1>
                 
-                <a href="generate.html">
-                    <button class="btn" value="Generate" onclick="readCSVFile();" >GENERATE</button>
-                </a>
+                <button disabled id="btngen" class="btn" value="Generate" onclick="readCSVFile();">GENERATE</button>
+                
             </div>
         </div>
     </body>

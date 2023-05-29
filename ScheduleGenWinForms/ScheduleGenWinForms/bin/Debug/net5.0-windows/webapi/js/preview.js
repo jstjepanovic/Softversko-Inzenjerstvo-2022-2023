@@ -2,14 +2,14 @@ $(() => {
 
     let result = JSON.parse(localStorage["result"]);
     let workdays  = ["Mon", "Tue", "Wedn", "Thurs", "Fri"]
-    let times = ["08:00 - 10:00", "10:00 - 12:00", "12:00 - 14:00", "14:00 - 16:00", "16:00 - 18:00", "18:00 - 20:00"]
+    let times =  JSON.parse(localStorage["times"]);
 
     if (result[0][0] == -1){
-        
+        $('#preview').append("<h1>Unable to generate result, try changing input</h1>");
     }else{
         var table = $('<table>').addClass('preview-table').attr('id', 'preview-table');
 
-        for(let i=0; i<7; i++){
+        for(let i=0; i<times.length + 1; i++){
             var row = $('<tr>').addClass('table-row');
     
             if (i == 0){
