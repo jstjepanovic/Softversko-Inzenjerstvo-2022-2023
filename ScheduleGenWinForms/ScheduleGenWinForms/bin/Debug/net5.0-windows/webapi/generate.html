@@ -62,11 +62,20 @@
 
         let data = JSON.parse(localStorage["data"]);
         
+        
                 
         for (let i = 0; i < data.length; i++) {
+            let empty_str = data[i].trim()
             data[i] = data[i].replace("\r", "").split(", ")
+            if (empty_str == "") {
+                data.splice(i, 1)
+            }
         }
+
+               
+        
        
+        console.log(data)
 
         let timeslot_data = load_timeslot(1)
 
